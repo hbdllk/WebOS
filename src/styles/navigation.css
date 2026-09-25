@@ -1,0 +1,48 @@
+nav {
+    width: min(90%, min-content);
+    height: 75px;
+
+    background: rgba(255, 255, 255, 0.26);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 1.5rem;
+    /*border-radius: calc(infinity * 1px);*/
+
+    position: absolute;
+    bottom: 2%;
+
+    display: flex;
+    gap: 12px;
+
+    padding: 12px;
+
+    cursor: default;
+
+    z-index: calc(999 * 999);
+}
+
+.nav-hidden {
+    transform: translateY(100px) scale(0.75);
+}
+
+nav .icon {
+    aspect-ratio: 1 / 1;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.75em;
+    /*border-radius: calc(infinity * 1px);*/
+
+    box-shadow: inset -1px -1px 2.5px 0px rgba(0, 0, 0, 0.5),
+                inset 1px 1px 2.5px 0px rgba(255, 255, 255, 0.5);
+}
+
+nav .icon:hover {
+    transform: scale(1.1) translateY(-3px);
+}
+
+nav .icon img {
+    width: 65%;
+
+    margin: auto;
+}

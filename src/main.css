@@ -1,0 +1,25 @@
+@import url(./styles/default.css);
+@import url(./styles/animations.css);
+@import url(./styles/navigation.css);
+@import url(./styles/apps.css);
+@import url(./styles/window.css);
+*,
+*::before,
+*::after {
+  will-change: transform opacity;
+  transition: transform 250ms, box-shadow 250ms, opacity 250ms, width 100ms, height 100ms;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  overflow: hidden;
+  background: url(./images/wallhaven-w5x2yq.png) no-repeat center center/cover;
+  cursor: default;
+}
+
+a {
+  display: flex;
+}/*# sourceMappingURL=main.css.map */

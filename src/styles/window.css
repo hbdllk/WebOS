@@ -1,0 +1,132 @@
+:root {
+    --width: 550px;
+    --height: 350px;
+}
+
+.window {
+    width: var(--width);
+    height: var(--height);
+
+    background: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(6px);
+
+    box-shadow: 0 0 0 0 black;
+
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    left: calc(50vw - (var(--width) / 2));
+    top: calc(50dvh - (var(--height) / 2));
+
+    overflow: hidden;
+}
+
+.window-creating {
+    transform: perspective(23rem) rotateX(30deg) scale(0.5) translateY(10rem);
+    
+    opacity: 0;
+}
+
+.window-moving {
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.23),
+                0 5px 50px 0 rgba(0, 0, 0, 0.35);
+}
+
+.window-active {
+    width: 100vw;
+    height: 100dvh;
+
+    border: 0;
+    border-radius: 0;
+
+    z-index: 999;
+}
+
+.window-maximizing {
+    transition: all 250ms;
+}
+
+.window-minimizing {
+    transition: all 250ms;
+}
+
+.window-closing {
+    /*transform: scale(0.5) translateY(100%);*/
+    transform: perspective(23rem) rotateX(30deg) translateZ(-10rem);
+
+    
+    opacity: 0;
+}
+
+/*.window*/
+
+:root { --window-height: 25px; }
+.window__head {
+    width: 100%;
+    height: var(--window-height);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    /*display: flex;*/
+
+    text-align: center;
+    text-transform: capitalize;
+}
+.window__head:hover + .window__body {
+  pointer-events: none;
+}
+
+.window__control {
+    width: min-content;
+    height: calc((50 / 100) * var(--window-height));
+
+    position: absolute;
+    top: calc(((50 / 100) * var(--window-height)) / 2); 
+    left: 10px;
+
+    display: flex;
+    gap: 5px;
+}
+.window__control_btn {
+    border-radius: calc(infinity * 1px);
+
+    cursor: default;
+}
+.window__control_btn img {
+    transition: all 250ms;
+    height: 100%;
+
+    position: relative;
+    top: -55%;
+
+    opacity: 0;
+}
+.window__control_btn:hover img {
+    /*top: 0;*/
+
+    opacity: 1;
+
+    /*transform: scale(1.5);*/
+}
+
+.window__control_btn-close {
+    background-color: #ff736a;
+}
+.window__control_btn-max {
+    background-color: #17b32e;
+}
+.window__control_btn-min {
+    background-color: #febc2e;
+}
+
+.window__body {
+    width: 100%;
+    height: max(100%, 100%);
+
+    display: flex;
+    flex-direction: column;
+}
